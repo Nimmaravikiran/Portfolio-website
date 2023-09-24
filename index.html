@@ -1,0 +1,748 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>portfolio</title>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    font-family: 'popplins' sans-serif;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{ 
+    background-color: #080808;
+    color: #fff;
+}
+#header{
+    width: 100%;
+    height:100vh;
+    background-image:url(file:///C:/Users/Ravikiran/Documents/Visual%20Studio%202022/background%20img2.jpg);
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.container{
+    padding: 10px 10%;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.logo{
+    width: 80px;
+}
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+}
+nav ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+}
+nav ul li a::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #ff004f;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+nav ul li a:hover::after{
+    width: 100%;
+}
+.header-text{
+    margin-top: 10%;
+}
+.header-text h1{
+    font-size: 45px;
+    margin-top: 20px;
+}
+.header-text h1 span{
+    color: #ff004f;
+}
+/*..........about............*/
+#about{
+    padding: 80px 0;
+    color: #ababab;
+}
+.row{
+    display: flex;
+    justify-content:space-between;
+    flex-wrap: wrap;
+}
+.about-cool-1{   
+    flex-basis: 35%;
+}
+.about-cool-1 img{
+    width: 100%;
+    border-radius: 15px;
+}
+.about-cool-2{
+    flex-basis: 60%;
+}
+.sub-title{
+    font-size: 60px;
+    font-weight: 600;
+    color: green;
+    text-decoration: underline 2px red;
+}
+.tab-titles{
+    display: flex;
+    margin: 20px 0px 0px -50px;
+}
+.tab-links{
+    margin: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+}
+.tab-links::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #ff004f;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+.tab-links.active-link::after{
+    width: 100%;
+}
+.tab-contents ul li{
+    list-style: none;
+    margin: 10px 0;
+}
+.tab-contents ul li span{
+    color: #ff004f;
+    font-size: 14px;
+}
+.tab-contents{
+    display: none;
+}
+.tab-contents.active-tab{
+    display: block;
+}
+
+
+#services{
+    padding: 30px 0;
+}
+.services-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+.services-list div{
+    background: #262626;
+    padding: 40px;
+    font-size: 13px;
+    font-weight: 300;
+    border-radius: 10px;
+    transition: 0.5s, transform 0.5s;
+}
+.services-list div i{
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+.services-list div h2{
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 15px;
+
+}
+.services-list div a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 12px;
+    margin-top: 20px;
+    display: inline-block;
+}
+.services-list div:hover{
+    text-decoration: none;
+    background: #ff004f;
+    transform: translateX(-10px);
+}
+#portfolio{
+    padding: 50px 0;
+}
+.work-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px ,1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+.work{
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+.work img{
+    width: 100%;
+    border-radius:10px;
+    display: block;
+    transition: transform 0.5s;
+}
+.layer{
+    width: 100%;
+    height: 0;
+    background: linear-gradient(rgba(0,0,0,0.6),#ff004f);
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    font-size: 14px;
+    transition: height 0.5s;
+}
+.layer h3{
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.layer a{
+    margin-top: 20px;
+    color: #ff004f;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 60px;
+    background: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+    padding-top:22px;
+}
+.work:hover img{
+    transform: scale(1.1);
+}
+.work:hover .layer{
+    height: 100%;
+}
+.btn{
+    display: block;
+    margin: 50px auto;
+    width: fit-content;
+    border: 1px solid #ff004f;
+    padding: 14px 50px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #fff;
+    transition: background 0.5s;
+}
+.btn:hover{
+    background: #ff004f;
+}
+
+.contact-left{
+    flex-basis: 35%;
+}
+.contact-right{
+    flex-basis: 60%;
+}
+.contact-left p{
+    margin-top: 30px;
+}
+.contact-left p i{
+    color: #ff004f;
+    margin: 15px;
+    font-size: 25px;
+}
+.social-icons{
+    margin-top: 30px;
+}
+.social-icons a{
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 70px;
+    color: lightblue;
+    display: inline-block;
+}
+.social-icons a:hover{
+    color: #ff004f;
+    transition: translateY(-5px);
+}
+.btn.btn2{
+    display: inline-block;
+    background: #ff004f;
+}
+.contact-right form{
+    width: 100%;
+}
+form input, form textarea{
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: #262626;
+    padding: 15px;
+    margin: 15px 0;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 6px;
+}
+form btn2{
+    padding: 14px 60px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.copyright{
+    width: 100%;
+    text-align: center;
+    padding: 25px 0;
+    background: #262626;
+    font-weight: 200;
+    margin-top: 20px;
+}
+.copyright i{
+    display: #ff004f;
+}
+nav .fas{
+    display: none;
+}
+.me{
+    color: green;
+}
+
+@media only screen and (max-width:600px){
+    #header{
+        background-image: url(file:///C:/Users/Ravikiran/Documents/Visual%20Studio%202022/background%20img2.jpg);
+    }   
+.header-text{
+    margin-top: 100%;
+    font-size: 16px;
+    }
+    .header-text h1{
+        font-size: 30px;
+    }
+    nav .fas{
+        display: block;
+        font-size: 25px;
+    }
+    nav ul{
+        background: #ff004f;
+        position: fixed;
+        top: 0;
+        right: -200px;
+        width: 200px;
+        height: 100vh;
+        padding-top: 50px;
+        z-index: 2;
+        transition: right 0.5s;
+    }
+    .social-icons a{
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 50px;
+    color:lightblue;
+    display: inline-block;
+}
+    nav ul li{
+        display: block;
+        margin: 25px;
+
+    }
+    nav ul .fas{
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        cursor: pointer;
+    }
+    .sub-title{
+        font-size: 40px;
+    }
+    .sub-title1{
+        font-size: 40px;
+    }
+    .about-cool-1, .about-cool-2{
+        flex-basis: 100%;
+    }
+    .about-cool-1{
+        margin-bottom: 30px;
+    }
+    .about-cool-2{
+        font-size: 14px;
+    }
+    .tab-links{
+        font-size: 16px;
+        margin-right: 20px;
+    }
+    .contact-left, .contact-right{
+        flex-basis: 100%;
+    }
+    .copyright{
+        font-size: 14px;
+    }
+}
+#msg{
+    color: #61b752;
+    margin-top: -40px;
+    display: block;
+}
+
+
+
+.all-skills
+{
+    display: flex;
+    justify-content: center; 
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 5%;
+    column-gap: 5%;
+}
+.skill{
+     margin-top: 10%;
+}
+.skill-img{
+    display: block;
+    height: 81px;
+    width: 81px; 
+}
+.skills__subtitle{
+    margin-top: 30px;
+}
+#all--skills{
+    text-align: center;
+}
+
+
+
+
+
+.projects{
+    text-align: center;
+}
+.project__container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 1rem;
+}
+.project__box{
+    height: 60%;
+    width: 40%;
+    padding:1rem 2rem; 
+    background-color: white;
+    box-shadow: 0 4px 25px rgba(14,36,49,.15);
+    border-radius: .5rem;
+    overflow: hidden;
+    margin: 1rem;
+    cursor: pointer;
+}
+.p1-img{
+    margin: auto;
+    margin-bottom: 1rem;
+    transition: 1s;
+    width: 100%;
+    height:100%;
+}
+.project__box:hover{
+    text-emphasis-color: #fff;
+    box-shadow:3px 5px 5px 3px #8888;
+    transition: 0.9s ease-in-out;
+    transform: scale(1.01);
+}
+
+.project__box a
+{
+    color: #4070F4;
+}
+.project__subtitle{
+    color: black;
+}
+
+
+
+    </style>
+    <script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="header">
+    <div class="container">
+        <nav>
+            <h4>Ravikiran</h4>
+            <ul id="sidemenu">
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">My Skills</a></li>
+                <li><a href="#project">Projects</a></li>
+                <li><a href="#contact">contact</a></li>
+                <i class="fas fa-times" onclick="closemenu()"></i>
+            </ul>
+            <i class="fas fa-bars" onclick="openmenu()"></i>
+        </nav>
+        <hr>
+        <div class="header-text">
+            <h1>Hi, I'm <span>Ravikiran</span></h1>
+            <h1>A Full Stack Web-Developer</h1>
+        </div>
+    </div>
+</div>
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-cool-1">
+                <img src="C:\Users\Ravikiran\Documents\Visual Studio 2022\about.jpg">
+            </div> 
+            <div class="about-cool-2">
+                <h1 class="sub-title">About me</h1>
+                <p>As a fresher in software development, I am enthusiastic and eager to embark on a journey in the world of technology. I have a strong foundation in programming languages such as Java and Python, with a focus on object-oriented programming principles. During my academic years, I completed several projects that honed my problem-solving skills and allowed me to work in a team environment.<br>
+
+                    I'm excited to apply my knowledge to real-world projects. I'm also a strong believer in collaboration and open communication, which I believe are essential for success in software development.<br>
+                    
+                    Overall, I am motivated, adaptable, and ready to contribute to innovative software solutions while learning and growing in this dynamic field</p>
+                <div class="tab-titles">
+                    <p class="tab-links active-link me" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links me" onclick="opentab('experience')">Experience</p>
+                    <p class="tab-links me" onclick="opentab('education')">Education</p>
+                </div>
+                <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li><span>Programming:</span><br>Java, Python, MySQL</li>
+                        <li><span>Web Development</span><br>Web App Development Using Django</li>
+                        <li><span>Non-Technical Skills</span><br>Communication Skills & Decision-making skills</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="experience">
+                    <ul>
+                        <li><span>2023 - 2024</span><br>Internship at Excelerate Platform(Remote)<br>Role : Data-Analyst<br>Duration : July - Sept(3 Months program)</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span>2021 - 2024</span><br>Course:Bachelor of Computer Applications(BCA)<br>College : Osmania University,Hyderabad<br>CGPA : 9.3</li>
+                        <li><span>2019 - 2021</span><br>Course : MPC<br>College : Sai Shivani Junior College,Warangal<br>Marks : 958</li>
+                        <li><span>2018 - 2019</span><br>Class X<br>School : ZPHS High School,Warangal<br>CGPA : 9.7</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!---
+<div id="services">
+    <div class="container">
+        <h1 class="sub-title">My Skills</h1>
+        <div class="services-list">
+            <div>
+                <i class="fa-solid fa-code"></i>
+                <h2>Web Design</h2>
+                <p>hii</p>
+                <a href="#">Learn more</a>
+            </div>
+            <div>
+                <i class="fa-solid fa-code"></i>
+                <h2>UL/UX Design</h2>
+                <p>hii</p>
+                <a href="#">Learn more</a>
+            </div>
+            <div>
+                <i class="fa-solid fa-crop-simple"></i>
+                <h2>App Design</h2>
+                <p>hii</p>
+                <a href="#">Learn more</a>
+            </div>
+        </div>
+    </div>
+</div>-->
+
+<section class="skills section" id="skills">
+    <div class="container">
+    <h2 class="sub-title" id="all--skills">My Skills</h2>
+    <div class="skills__container bd-grid">
+        <div>
+            <h2 class="skills__subtitle">Programming Skills:</h2>
+            <div class="all-skills">
+                <div class="skill">
+                    <img class="skill-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/C_Programming_Language.svg/926px-C_Programming_Language.svg.png" alt="">
+                </div>
+                <div class="skill">
+                    <img class="skill-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/1200px-ISO_C%2B%2B_Logo.svg.png" alt="">
+                </div>
+                <div class="skill">
+                    <img class="skill-img" src="https://upload.wikimedia.org/wikipedia/en/thumb/3/30/Java_programming_language_logo.svg/800px-Java_programming_language_logo.svg.png" alt="">
+                </div>
+                <div class="skill">
+                    <img class="skill-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png" alt="">
+                </div>
+                <div class="skill">
+                    <img class="skill-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/800px-HTML5_logo_and_wordmark.svg.png" alt="">
+                </div>
+                <div class="skill">
+                    <img class="skill-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/1200px-CSS3_logo_and_wordmark.svg.png" alt="">
+                </div>
+                <div class="skill">
+                    <img class="skill-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/220px-Unofficial_JavaScript_logo_2.svg.png" alt="">
+                </div>
+                <div class="skill">
+                    <img class="skill-img" src="https://w7.pngwing.com/pngs/159/366/png-transparent-django-python-computer-icons-logo-python-text-label-rectangle-thumbnail.png" alt="">
+                </div>
+                <div class="skill">
+                    <img class="skill-img" src="https://1000logos.net/wp-content/uploads/2020/08/MySQL-Logo.png" alt="">
+                </div>
+                <div class="skill">
+                    <img class="skill-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png" alt="">
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+</section>
+
+
+<section class="projects section" id="project">
+    <div class="container">
+    <h2 class="sub-title">
+        Projects
+    </h2>
+    <div class="project__container">
+        <div class="project__box">
+            <h3 class="project__subtitle">Portfolio</h3>
+            <img class="p1-img" src="C:\Users\Ravikiran\Documents\Visual Studio 2022\portfolioimage.png" alt="portfolioimage">
+            <a href="#header">Potfolio Website</a><br>
+              <p class="project__subtitle">#HTML #CSS #Javascript</p> 
+        </div>
+        <div class="project__box">
+            <h3 class="project__subtitle">Game</h3>
+            <img class="p1-img" src="C:\Users\Ravikiran\Documents\Visual Studio 2022\gameimage.png" alt="A Mini Game">
+            <a href="https://nimmaravikiran.github.io/5star5/"  >5*5 Game</a><br>
+              <p class="project__subtitle">#HTML #CSS #Javascript</p> 
+        </div>
+    </div>
+    </div>
+</section>
+
+
+
+<!--
+<div id="portfolio">
+    <div class="container">
+        <h1 class="sub-title">My Work</h1>
+        <div class="work-list">
+            <div class="Work">
+                <img src="img/one.jpg">
+                <div class="layer">
+                    <h3>your like img app</h3>
+                    <p>related to image content</p>
+                    <a href="#"><i class="fa-solid fa-code"></i></a>
+                </div>
+            </div>
+            <div class="Work">
+                <img src="img/two.jpg">
+                <div class="layer">
+                    <h3>social media app</h3>
+                    <p>Activists working on online safety through a feminist approach of workshops, policy, social change interventions</p>
+                    <a href="#"><i class="fa-solid fa-code"></i></a>
+                </div>
+            </div>
+            <div class="Work">
+                <img src="img/three.jpg">
+                <div class="layer">
+                    <h3>your  liked img</h3>
+                    <p>related to image content</p>
+                    <a href="#"><i class="fa-solid fa-code"></i></a>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="btn">see mode</a>
+    </div>
+</div>
+
+-->
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">contact me</h1>
+                <P><i class="fa-solid fa-paper-plane"></i>contact@example.com</P>
+                <p><i class="fa-solid fa-phone-volume"></i>+91XXXXXXXXX</p>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/ravikiran-nimma-75b084231/"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://github.com/Nimmaravikiran"><i class="fa-brands fa-github"></i></a>
+                    <a href="mailto:nimmaravikiran000@gmail.com"><i class="fa-regular fa-envelope"></i></a>
+                </div>
+                <a href="C:\Users\Ravikiran\Documents\Visual Studio 2022\My_Resume.pdf" class="btn btn2">Resume</a>
+            </div>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your SMS"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>&copy; copyright 2023 @ Ravikiran.</p>
+    </div>
+</div>
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab")
+    }
+</script>
+<script>
+    var sidemenu = document.getElementById("sidemenu");
+
+    function openmenu(){
+        sidemenu.style.right = "0"
+    }
+    function closemenu(){
+        sidemenu.style.right = "-200px"
+    }
+</script>
+ 
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxxM-SYD2Zo2U8jP-B1N6KPbVXY3y6ULkVZVyjahEBApmzaV8jPAEUdryhf8fke-Nne/exec'
+
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message sent successfully"
+            setTimeout(function(){
+                msg.innerHTML = ""
+            },5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+</script>
+</body>
+</html>
