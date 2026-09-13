@@ -3,6 +3,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>portfolio</title>
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <style>
         *{
     margin: 0;
@@ -341,86 +343,124 @@ nav .fas{
     color: green;
 }
 
-@media only screen and (max-width:600px){
-    #header{
-        background-image: url(Untitled.jpg);
-    }   
-.header-text{
-    margin-top: 100%;
-    font-size: 16px;
+@media only screen and (max-width: 600px) {
+
+    #header {
+        background-image: url("Untitled.jpg");
     }
-    .header-text h1{
-        font-size: 30px;
+
+    .container {
+        padding: 10px 5%;
     }
+
     nav {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
         position: relative;
         z-index: 9999;
     }
-    nav .fas {
-        display: block;
+
+    nav h4 {
+        color: white;
         font-size: 25px;
+    }
+
+    /* Hamburger icon */
+    nav > .fas.fa-bars {
+        display: block;
+        font-size: 28px;
         color: white;
         cursor: pointer;
+        z-index: 100000;
     }
+
+    /* Mobile menu */
     nav ul {
         display: block;
-        background: #ff004f;
         position: fixed;
         top: 0;
-        right: -200px;
-        width: 200px;
+        right: -250px;
+        width: 250px;
         height: 100vh;
-        padding-top: 50px;
+        background: #ff004f;
+        padding-top: 70px;
         z-index: 99999;
-        transition: right 0.5s;
+        transition: right 0.5s ease;
     }
-    .social-icons a{
-    text-decoration: none;
-    font-size: 30px;
-    margin-right: 50px;
-    color:lightblue;
-    display: inline-block;
-    }
-   nav ul li {
+
+    nav ul li {
         display: block;
         margin: 25px;
     }
 
     nav ul li a {
+        display: block;
         color: white !important;
+        font-size: 20px;
+        text-decoration: none;
     }
 
-    nav ul .fas {
+    /* Close button */
+    nav ul .fa-times {
+        display: block;
         position: absolute;
         top: 25px;
         left: 25px;
+        color: white;
+        font-size: 25px;
         cursor: pointer;
     }
-}
-    .sub-title{
+
+    .header-text {
+        margin-top: 100%;
+        font-size: 16px;
+    }
+
+    .header-text h1 {
+        font-size: 30px;
+    }
+
+    .social-icons a {
+        font-size: 30px;
+        margin-right: 30px;
+    }
+
+    .sub-title {
         font-size: 40px;
     }
-    .sub-title1{
-        font-size: 40px;
-    }
-    .about-cool-1, .about-cool-2{
+
+    .about-cool-1,
+    .about-cool-2 {
         flex-basis: 100%;
     }
-    .about-cool-1{
+
+    .about-cool-1 {
         margin-bottom: 30px;
     }
-    .about-cool-2{
+
+    .about-cool-2 {
         font-size: 14px;
     }
-    .tab-links{
+
+    .tab-links {
         font-size: 16px;
         margin-right: 20px;
+        margin-left: 0;
     }
-    .contact-left, .contact-right{
+
+    .contact-left,
+    .contact-right {
         flex-basis: 100%;
     }
-    .copyright{
+
+    .copyright {
         font-size: 14px;
+    }
+
+    .project__box {
+        width: 90%;
     }
 }
 
@@ -516,7 +556,6 @@ nav .fas{
 
 
     </style>
-    <script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <div id="header">
