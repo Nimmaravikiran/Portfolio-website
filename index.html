@@ -563,11 +563,11 @@ nav .fas{
         <nav>
             <h4 class="logo-text">Ravikiran</h4>
             <ul id="sidemenu">
-                <li><a href="#header">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">My Skills</a></li>
-                <li><a href="#project">Projects</a></li>
-                <li><a href="#contact">contact</a></li>
+                <li><a href="#header" onclick="closemenu()">Home</a></li>
+                <li><a href="#about" onclick="closemenu()">About</a></li>
+                <li><a href="#skills" onclick="closemenu()">My Skills</a></li>
+                <li><a href="#project" onclick="closemenu()">Projects</a></li>
+                <li><a href="#contact" onclick="closemenu()">contact</a></li>
                 <i class="fas fa-times" onclick="closemenu()"></i>
             </ul>
             <i class="fas fa-bars" onclick="openmenu()"></i>
@@ -740,7 +740,7 @@ nav .fas{
         sidemenu.style.right = "0"
     }
     function closemenu(){
-        sidemenu.style.right = "-200px"
+        sidemenu.style.right = "-250px"
     }
 </script>
  
