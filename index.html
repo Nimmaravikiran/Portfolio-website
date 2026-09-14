@@ -3,11 +3,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>portfolio</title>
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <style>
         *{
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'popplins' sans-serif;
     box-sizing: border-box;
 }
 html{
@@ -31,18 +33,18 @@ body{
 }
 nav {
     width: 100%;
-    min-height: 60px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     position: relative;
     z-index: 9999;
 }
+
 nav h4 {
-    color: #fff;
+    color: white;
     font-size: 25px;
-    font-weight: 600;
 }
+
 nav ul {
     display: flex;
     align-items: center;
@@ -50,92 +52,415 @@ nav ul {
     margin: 0;
     padding: 0;
 }
-nav ul li {
+.logo{
+    width: 80px;
+}
+        nav ul li {
     display: inline-block;
     margin: 10px 20px;
 }
+
 nav ul li a {
-    color: #fff !important;
+    color: white !important;
     text-decoration: none;
     font-size: 18px;
     position: relative;
-    display: inline-block;
 }
-nav ul li a::after {
-    content: "";
+nav ul li a::after{
+    content: '';
     width: 0;
     height: 3px;
     background: #ff004f;
     position: absolute;
     left: 0;
     bottom: -6px;
-    transition: 0.3s;
+    transition: 0.5s;
 }
-nav ul li a:hover::after {
-    width: 100%;
-}
-.menu-icon, .close-icon {
+nav .fas {
     display: none;
 }
+nav ul li a:hover::after{
+    width: 100%;
+}
+.header-text{
+    margin-top: 10%;
+}
+.header-text h1{
+    font-size: 45px;
+    margin-top: 20px;
+}
+.header-text h1 span{
+    color: #ff004f;
+}
+/*..........about............*/
+#about{
+    padding: 80px 0;
+    color: #ababab;
+}
+.row{
+    display: flex;
+    justify-content:space-between;
+    flex-wrap: wrap;
+}
+.about-cool-1{   
+    flex-basis: 35%;
+}
+.about-cool-1 img{
+    width: 100%;
+    border-radius: 15px;
+}
+.about-cool-2{
+    flex-basis: 60%;
+}
+.sub-title{
+    font-size: 60px;
+    font-weight: 600;
+    color: green;
+    text-decoration: underline 2px red;
+}
+.tab-titles{
+    display: flex;
+    margin: 20px 0px 0px -50px;
+}
+.tab-links{
+    margin: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+}
+.tab-links::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #ff004f;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+.tab-links.active-link::after{
+    width: 100%;
+}
+.tab-contents ul li{
+    list-style: none;
+    margin: 10px 0;
+}
+.tab-contents ul li span{
+    color: #ff004f;
+    font-size: 14px;
+}
+.tab-contents{
+    display: none;
+}
+.tab-contents.active-tab{
+    display: block;
+}
+
+
+#services{
+    padding: 30px 0;
+}
+.services-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+.services-list div{
+    background: #262626;
+    padding: 40px;
+    font-size: 13px;
+    font-weight: 300;
+    border-radius: 10px;
+    transition: 0.5s, transform 0.5s;
+}
+.services-list div i{
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+.services-list div h2{
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 15px;
+
+}
+.services-list div a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 12px;
+    margin-top: 20px;
+    display: inline-block;
+}
+.services-list div:hover{
+    text-decoration: none;
+    background: #ff004f;
+    transform: translateX(-10px);
+}
+#portfolio{
+    padding: 50px 0;
+}
+.work-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px ,1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+.work{
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+.work img{
+    width: 100%;
+    border-radius:10px;
+    display: block;
+    transition: transform 0.5s;
+}
+.layer{
+    width: 100%;
+    height: 0;
+    background: linear-gradient(rgba(0,0,0,0.6),#ff004f);
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    font-size: 14px;
+    transition: height 0.5s;
+}
+.layer h3{
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.layer a{
+    margin-top: 20px;
+    color: #ff004f;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 60px;
+    background: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+    padding-top:22px;
+}
+.work:hover img{
+    transform: scale(1.1);
+}
+.work:hover .layer{
+    height: 100%;
+}
+.btn{
+    display: block;
+    margin: 50px auto;
+    width: fit-content;
+    border: 1px solid #ff004f;
+    padding: 14px 50px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #fff;
+    transition: background 0.5s;
+}
+.btn:hover{
+    background: #ff004f;
+}
+
+.contact-left{
+    flex-basis: 35%;
+}
+.contact-right{
+    flex-basis: 60%;
+}
+.contact-left p{
+    margin-top: 30px;
+}
+.contact-left p i{
+    color: #ff004f;
+    margin: 15px;
+    font-size: 25px;
+}
+.social-icons{
+    margin-top: 30px;
+}
+.social-icons a{
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 70px;
+    color: lightblue;
+    display: inline-block;
+}
+.social-icons a:hover{
+    color: #ff004f;
+    transition: translateY(-5px);
+}
+.btn.btn2{
+    display: inline-block;
+    background: #ff004f;
+}
+.contact-right form{
+    width: 100%;
+}
+form input, form textarea{
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: #262626;
+    padding: 15px;
+    margin: 15px 0;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 6px;
+}
+form btn2{
+    padding: 14px 60px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.copyright{
+    width: 100%;
+    text-align: center;
+    padding: 25px 0;
+    background: #262626;
+    font-weight: 200;
+    margin-top: 20px;
+}
+.copyright i{
+    display: #ff004f;
+}
+nav .fas{
+    display: none;
+}
+.me{
+    color: green;
+}
+
 @media only screen and (max-width: 600px) {
-    nav { position: relative; z-index: 9999; }
-    nav h4 { font-size: 24px; }
+
+    #header {
+        background-image: url("Untitled.jpg");
+    }
+
+    .container {
+        padding: 10px 5%;
+    }
+
+    nav {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        z-index: 9999;
+    }
+
+    nav h4 {
+        color: white;
+        font-size: 25px;
+    }
+
+    /* Hamburger icon */
+    nav > .fas.fa-bars {
+        display: block;
+        font-size: 28px;
+        color: white;
+        cursor: pointer;
+        z-index: 100000;
+    }
+
+    /* Mobile menu */
     nav ul {
         display: block;
-        background: #ff004f;
         position: fixed;
         top: 0;
-        right: -220px;
-        width: 220px;
+        right: -250px;
+        width: 250px;
         height: 100vh;
-        padding-top: 50px;
-        z-index: 10000;
-        transition: right 0.5s;
+        background: #ff004f;
+        padding-top: 70px;
+        z-index: 99999;
+        transition: right 0.5s ease;
     }
-    nav ul li { display: block; margin: 25px; }
-    nav ul li a { color: #fff !important; }
-    .menu-icon {
+
+    nav ul li {
         display: block;
-        color: #fff;
-        font-size: 28px;
-        cursor: pointer;
-        z-index: 10001;
+        margin: 25px;
     }
-    .close-icon {
+
+    nav ul li a {
+        display: block;
+        color: white !important;
+        font-size: 20px;
+        text-decoration: none;
+    }
+
+    /* Close button */
+    nav ul .fa-times {
         display: block;
         position: absolute;
         top: 25px;
         left: 25px;
-        color: #fff;
+        color: white;
         font-size: 25px;
         cursor: pointer;
     }
-}
 
-    .sub-title{
+    .header-text {
+        margin-top: 100%;
+        font-size: 16px;
+    }
+
+    .header-text h1 {
+        font-size: 30px;
+    }
+
+    .social-icons a {
+        font-size: 30px;
+        margin-right: 30px;
+    }
+
+    .sub-title {
         font-size: 40px;
     }
-    .sub-title1{
-        font-size: 40px;
-    }
-    .about-cool-1, .about-cool-2{
+
+    .about-cool-1,
+    .about-cool-2 {
         flex-basis: 100%;
     }
-    .about-cool-1{
+
+    .about-cool-1 {
         margin-bottom: 30px;
     }
-    .about-cool-2{
+
+    .about-cool-2 {
         font-size: 14px;
     }
-    .tab-links{
+
+    .tab-links {
         font-size: 16px;
         margin-right: 20px;
+        margin-left: 0;
     }
-    .contact-left, .contact-right{
+
+    .contact-left,
+    .contact-right {
         flex-basis: 100%;
     }
-    .copyright{
+
+    .copyright {
         font-size: 14px;
+    }
+
+    .project__box {
+        width: 90%;
     }
 }
 
@@ -230,23 +555,7 @@ nav ul li a:hover::after {
 
 
 
-    
-/* Skills section */
-#my-skills {
-    display: block;
-    visibility: visible;
-    opacity: 1;
-}
-#my-skills .all-skills {
-    display: flex;
-    visibility: visible;
-    opacity: 1;
-}
-#my-skills .skill {
-    display: block;
-}
-
-</style>
+    </style>
 </head>
 <body>
 <div id="header">
@@ -256,12 +565,12 @@ nav ul li a:hover::after {
             <ul id="sidemenu">
                 <li><a href="#header">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#my-skills">My Skills</a></li>
+                <li><a href="#skills">My Skills</a></li>
                 <li><a href="#project">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li class="close-icon" onclick="closemenu()">✕</li>
+                <li><a href="#contact">contact</a></li>
+                <i class="fas fa-times" onclick="closemenu()"></i>
             </ul>
-            <div class="menu-icon" onclick="openmenu()">☰</div>
+            <i class="fas fa-bars" onclick="openmenu()"></i>
         </nav>
         <hr>
         <div class="header-text">
@@ -284,7 +593,7 @@ nav ul li a:hover::after {
                     
                     Overall, I am motivated, adaptable, and ready to contribute to innovative software solutions while learning and growing in this dynamic field</p>
                 <div class="tab-titles">
-                    <p class="tab-links active-link me" onclick="opentab('skill-content')">Skills</p>
+                    <p class="tab-links active-link me" onclick="opentab('skills')">Skills</p>
                     <p class="tab-links me" onclick="opentab('experience')">Experience</p>
                     <p class="tab-links me" onclick="opentab('education')">Education</p>
                 </div>
@@ -312,7 +621,7 @@ nav ul li a:hover::after {
     </div>
 </div>
 
-<section class="skills section" id="my-skills">
+<section class="skills section" id="skills">
     <div class="container">
     <h2 class="sub-title" id="all--skills">My Skills</h2>
     <div class="skills__container bd-grid">
@@ -431,8 +740,13 @@ nav ul li a:hover::after {
         sidemenu.style.right = "0"
     }
     function closemenu(){
-        sidemenu.style.right = "-220px"
+        sidemenu.style.right = "-250px"
     }
+    document.querySelectorAll("#sidemenu a").forEach(function(link) {
+    link.addEventListener("click", function() {
+        closemenu();
+    });
+});
 </script>
  
 <script>
